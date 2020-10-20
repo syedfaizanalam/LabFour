@@ -4,13 +4,65 @@ public class PowersTable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		Scanner scnr = new Scanner(System.in);
-		
-		int num;
 		String input;
 		
+		System.out.println("Good day, sir.");
+		System.out.println("Would you like to make a multiplication table [1] or "
+				+ "see a table of sqaured and cubed values [2]?");
+		System.out.println("Please, enter 1 or 2.");
+		
+		int choice = scnr.nextInt();
+		
 		do {
+		
+		do {
+		if (choice == 1) {
+			multipTable();
+		} else if (choice == 2) {
+			table();
+		} else {
+			System.out.println("Invalid response.");
+		}
+		}while(choice == 1 || choice == 2);
+		
+		System.out.println("Would you like to try again? [y/n]");
+		input = scnr.next();
+		}while(input.equals("y"));
+		
+	System.out.println("Goodbye");
+	}
+	
+	public static void multipTable() {
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Let's make a multiplication table.");
+		System.out.println("Enter a value to set the table's limit.");
+		
+		int numLimit = scnr.nextInt();
+		
+		for(int i = 1; i<=numLimit;i++ ) {
+            System.out.format("%4d",i);
+        }
+        System.out.println();
+        System.out.println("------------------------------------------");
+         
+        for(int i = 1 ;i<=numLimit;i++) {
+            // print left most column first
+            System.out.format("%4d |",i);
+            for(int j=1;j<=numLimit;j++) {
+                System.out.format("%4d",i*j);
+            }
+            System.out.println();
+        }
+		
+	}
+	
+	public static void table() {
+		Scanner scnr = new Scanner(System.in);
+		
+		
+		int num;
+		
 		
 		System.out.println("Please enter a number");	
 		num = scnr.nextInt();
@@ -26,11 +78,9 @@ public class PowersTable {
 			System.out.printf("%-17d", i*i);
 			System.out.printf("%-16d %n", i*i*i);}
 		
-		System.out.println("Would you like to continue? [y/n]");
-		input = scnr.next();
-		}while(input.equals("y"));
-	System.out.println("Goodbye");
+		
 	}
+	
 }
 			
 
