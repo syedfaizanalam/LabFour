@@ -6,29 +6,28 @@ public class PowersTable {
 		// TODO Auto-generated method stub
 		Scanner scnr = new Scanner(System.in);
 		String input;
+		int choice; 
 		
 		System.out.println("Good day, sir.");
 		System.out.println("Would you like to make a multiplication table [1] or "
-				+ "see a table of sqaured and cubed values [2]?");
-		System.out.println("Please, enter 1 or 2.");
+				+ "see a table of sqaured and cubed values [2]?");		
 		
-		int choice = scnr.nextInt();
-		
+		//create program that asks user whether or not they want to choose b/w
+		//option 1 or 2 and then whether or not they want to retry
 		do {
-		
-		do {
-		if (choice == 1) {
+		System.out.println("Please, enter 1 or 2.");	
+		choice = scnr.nextInt();
+		if(choice == 1) {
 			multipTable();
 		} else if (choice == 2) {
 			table();
 		} else {
-			System.out.println("Invalid response.");
+			System.out.println("Sorry, invalid response.");
 		}
-		}while(choice == 1 || choice == 2);
-		
 		System.out.println("Would you like to try again? [y/n]");
 		input = scnr.next();
-		}while(input.equals("y"));
+		}while(input.contentEquals("y"));
+		
 		
 	System.out.println("Goodbye");
 	}
